@@ -1,0 +1,29 @@
+# Local/private artifacts
+.env
+.env.*
+.secrets/
+secrets/
+credentials/
+cookies/
+*.sqlite
+*.db
+
+# Raw exports and private reports
+raw/
+private/
+exports/
+reports/
+platform_exports/
+forum_exports/
+
+# Python/cache/editor noise
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+.idea/
+.vscode/
+

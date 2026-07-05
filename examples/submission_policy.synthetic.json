@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-05T00:00:00Z",
+  "read_only": true,
+  "gates": {
+    "strict_similarity_cutoff": 0.62,
+    "default_similarity_cutoff": 0.7,
+    "direct_forum_template_action": "block",
+    "crowded_forum_direct_action": "penalize"
+  },
+  "community_skill_policy": {
+    "schema_version": 1,
+    "enabled": true,
+    "skill_count": 6,
+    "skill_ids": [
+      "community::near_pass_repair",
+      "community::alpha_template_transform",
+      "community::operation_attribution",
+      "community::submission_gate",
+      "community_failure::template_clone_blocker",
+      "community_failure::pending_check_not_submit_ready"
+    ],
+    "risk_counts": {
+      "metric_near_pass": 8,
+      "correlation_risk": 6,
+      "template_clone_risk": 7,
+      "stale_precheck_risk": 5,
+      "field_family_crowding": 5,
+      "unit_check": 3
+    },
+    "actions": {
+      "hard_block_flags": [
+        "private_code",
+        "unknown_or_unsupported"
+      ],
+      "template_transform_flags": [
+        "possible_complete_alpha",
+        "template_clone_risk"
+      ],
+      "penalize_flags": [
+        "field_family_crowding",
+        "metric_near_pass",
+        "operator_availability_risk",
+        "platform_limit",
+        "stale_precheck_risk",
+        "unit_check"
+      ],
+      "template_action": "block_unless_orthogonal_overlay",
+      "near_pass_action": "repair_or_fresh_recheck_before_submit",
+      "field_family_crowding_action": "penalize_and_limit_budget"
+    }
+  },
+  "rules": {
+    "direct_forum_formula_graylist": {
+      "action": "block_unless_orthogonal_overlay",
+      "reason": "Direct public snippets are similarity-prone; require field-family or operator-family transformation."
+    },
+    "community_skill_risks": {
+      "action": "block_or_penalize",
+      "reason": "Use community skill memory as conservative risk routing, not as direct formula generation."
+    }
+  },
+  "synthetic_candidate_examples": [
+    {
+      "candidate_id": "synthetic_candidate_001",
+      "expression_hash": "synthetic_hash_template_risk",
+      "risk_flags": [
+        "template_clone_risk"
+      ],
+      "has_orthogonal_overlay": false,
+      "policy_action": "block",
+      "policy_reason": "template_clone_risk"
+    },
+    {
+      "candidate_id": "synthetic_candidate_002",
+      "expression_hash": "synthetic_hash_crowded_family",
+      "risk_flags": [
+        "field_family_crowding"
+      ],
+      "has_orthogonal_overlay": true,
+      "policy_action": "penalize",
+      "policy_reason": "community_skill_risk:field_family_crowding"
+    },
+    {
+      "candidate_id": "synthetic_candidate_003",
+      "expression_hash": "synthetic_hash_pending_check",
+      "risk_flags": [
+        "stale_precheck_risk"
+      ],
+      "has_orthogonal_overlay": true,
+      "policy_action": "penalize",
+      "next_queue": "check_queue_before_submit_review"
+    }
+  ]
+}
