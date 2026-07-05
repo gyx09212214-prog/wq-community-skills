@@ -33,6 +33,75 @@ The design is derived from the public architecture of [worldquant-harness](https
 
 **论坛片段只作为结构语法和失败经验，不作为可直接提交的 alpha 表达式。**
 
+## CLI Quick Start / 命令行快速开始
+
+This repository now includes a runnable Python CLI for two focused tasks:
+
+1. **Near-pass repair evidence**: explain how to adjust candidates that are close to passing or blocked by a known failure type.
+2. **Template acquisition**: fetch community/forum content and convert it into privacy-safe template skeletons.
+
+本仓库现在包含一个可运行的 Python CLI，定位在两个具体能力：
+
+1. **微调依据**：当 alpha 接近通过或卡在某类失败时，生成可解释的 repair route。
+2. **模板一键获取**：只读拉取 Community/forum 内容，并抽象为脱敏 template skeleton。
+
+Install locally:
+
+```bash
+python -m pip install -e ".[dev]"
+```
+
+Run the no-credential synthetic demo:
+
+```bash
+python -m wq_skill_pipeline demo
+```
+
+The demo writes private run artifacts to `~/.wq_skill_pipeline/runs/<run_id>` and public-safe artifacts to `artifacts/public/<run_id>`, including:
+
+- `template_catalog.redacted.jsonl`
+- `community_skill_memory.redacted.jsonl`
+- `submission_policy.redacted.json`
+- `near_pass_repair_suggestions.jsonl`
+- `near_pass_repair_playbook.md`
+- `review_report.html`
+- `manifest.json`
+
+Check the environment:
+
+```bash
+python -m wq_skill_pipeline doctor
+```
+
+For live readonly Community fetch, install the optional browser dependency and save a local Playwright login state:
+
+```bash
+python -m pip install -e ".[live]"
+python -m playwright install chromium
+python -m wq_skill_pipeline login
+python -m wq_skill_pipeline run
+```
+
+The live connector is readonly. It does not include submit capability, and it does not write cookies, authorization headers, passwords, or account secrets into run artifacts.
+
+Run only template extraction from local JSONL:
+
+```bash
+python -m wq_skill_pipeline templates fetch \
+  --input-posts examples/community_posts.synthetic.jsonl \
+  --output-dir .tmp/templates
+```
+
+Run only near-pass repair suggestions from local ledger/check artifacts:
+
+```bash
+python -m wq_skill_pipeline repair suggest \
+  --ledger-root path/to/local/worldquant-harness/reports \
+  --output-dir .tmp/repair
+```
+
+Public export is fail-closed: if the scanner sees likely credentials, raw platform payloads, long forum quotes, or executable alpha-expression patterns, public artifacts are not written.
+
 Skills are used as:
 
 - **gates**: block or penalize unsafe candidates;
@@ -116,4 +185,3 @@ See [Privacy and Safety](docs/PRIVACY_AND_SAFETY.md) and [Disclaimer](DISCLAIMER
 ## License
 
 MIT License. See [LICENSE](LICENSE).
-

@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wq-community-skills"
+version = "0.1.0"
+description = "Privacy-safe near-pass repair and community template skeleton pipeline for WQ-style research."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "gyx09212214-prog" }
+]
+dependencies = []
+
+[project.optional-dependencies]
+live = ["playwright>=1.40"]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+include = ["wq_skill_pipeline*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
