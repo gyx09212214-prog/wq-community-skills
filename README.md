@@ -1,49 +1,67 @@
 # WQ Community Skills
 
-**Bilingual project / 双语项目**
+**Forum experience -> privacy-safe skill memory -> safer WQ-style agent research**
 
-This repository is a public, privacy-safe showcase of a **forum-to-agent-skill memory** design for WorldQuant-style alpha research agents.
+**双语项目 / Bilingual project**
 
-这个仓库是一个公开、脱敏的展示项目，用来说明如何把 WQ Community / forum triage 中的经验蒸馏成 Agent 可使用的 **skill memory**：不是复制论坛公式，而是把经验转成 failure taxonomy、repair routes、submission gates 和 policy constraints。
+This repository is a public showcase of a **forum-to-agent-skill memory** pipeline for WorldQuant-style alpha research agents. It does not publish formulas. It shows how community experience, failed submissions, near-pass repairs, and template risks can become reusable gates, repair routes, risk flags, and policy constraints.
 
-> Educational and research use only. This repository is not affiliated with, endorsed by, or sponsored by WorldQuant or WorldQuant BRAIN. It does not contain real alpha expressions, private forum exports, credentials, or investment advice.
+这个仓库展示的是一套“论坛经验 -> Agent skill memory”的脱敏流程。它不是公式库，也不是平台截图合集；它的作用是把论坛经验、失败记录和微调复盘转成 Agent 能执行的门控、修复路线、风险标签和提交策略。
 
-## What This Shows / 这个项目展示什么
+> Educational and research use only. This repository is not affiliated with, endorsed by, or sponsored by WorldQuant or WorldQuant BRAIN. It does not contain real alpha expressions, raw forum exports, credentials, private platform screenshots, or investment advice.
 
-Forum discussions can contain useful operational lessons, but using them directly is risky:
+<p align="center">
+  <img src="docs/images/hero-skill-memory-flow.svg" width="920" alt="Forum evidence to agent skill memory flow" />
+</p>
 
-- snippets may be template clones;
-- near-pass candidates may need repair rather than fresh generation;
-- stale checks and pending correlation results should not be treated as submit-ready;
-- unsupported operators, low-coverage fields, concentrated weights, and turnover issues need different repairs.
+## Why This Exists / 为什么需要它
 
-本项目展示的不是“从论坛抄 alpha”，而是：
+Forum discussions can contain useful operational knowledge, but direct reuse is dangerous. Snippets may be template clones, near-pass candidates may need repair instead of random regeneration, pending checks are not submit-ready, and different failures require different next actions.
 
-1. 把帖子和评论 triage 成结构化 records；
-2. 把 records 蒸馏成 reusable skills；
-3. 把 skills 用作 gates、repair routes、risk flags；
-4. 在 candidate generation / presubmit / repair queue 中约束 Agent；
-5. 保留 human submit boundary。
+论坛经验有价值，但不能直接拿来提交。真正值得沉淀的是：什么时候该 block，什么时候该 repair，什么时候 refresh check，什么时候必须换字段族或算子族，什么时候必须停在人审边界前。
 
-The design is derived from the public architecture of [worldquant-harness](https://github.com/gyx09212214-prog/worldquant-harness), especially its community skill memory and forum-informed submission policy workflow.
+| Problem | Skill-memory response |
+| --- | --- |
+| Forum snippets can become clone risk | Treat templates as grammar only; require transformation before simulation |
+| Near-pass candidates are easy to waste | Route them to metric overlay, settings isolation, or family shift |
+| Pending or stale checks look tempting | Keep them in the check queue, not submit review |
+| Failures are too coarse | Split them into actionable buckets with stop conditions |
+| Agent context is fragile | Persist risk flags, skill routes, policy action, and repair hints |
 
-## Core Principle / 核心原则
+<p align="center">
+  <img src="docs/images/skill-impact-comparison.svg" width="920" alt="Skill memory impact comparison" />
+</p>
 
-**Forum snippets are treated as grammar and failure evidence, not as directly submit-ready alpha expressions.**
+## What It Does / 它具体做什么
 
-**论坛片段只作为结构语法和失败经验，不作为可直接提交的 alpha 表达式。**
+The pipeline turns community and local evidence into public-safe artifacts:
 
-## CLI Quick Start / 命令行快速开始
+1. **Triage** posts, comments, and local records into value type, risk flags, field families, and operator families.
+2. **Distill** records into `community::*` routes and refined `community_failure::*` action skills.
+3. **Build policy** that can block, penalize, allow, or send candidates to a check queue.
+4. **Suggest repairs** for near-pass and known failure patterns.
+5. **Export public artifacts** only after privacy scanning.
 
-This repository now includes a runnable Python CLI for two focused tasks:
+这条链路的目标不是生成 alpha，而是给 Agent 一个更可靠的行动系统：把经验变成 route、gate、repair 和 policy。
 
-1. **Near-pass repair evidence**: explain how to adjust candidates that are close to passing or blocked by a known failure type.
-2. **Template acquisition**: fetch community/forum content and convert it into privacy-safe template skeletons.
+## Public-Safe Effect Signals / 脱敏效果信号
 
-本仓库现在包含一个可运行的 Python CLI，定位在两个具体能力：
+The repository includes sanitized effect signals to explain why the skill system matters. These are workflow evidence cards, not trading advice and not performance guarantees.
 
-1. **微调依据**：当 alpha 接近通过或卡在某类失败时，生成可解释的 repair route。
-2. **模板一键获取**：只读拉取 Community/forum 内容，并抽象为脱敏 template skeleton。
+<p align="center">
+  <img src="docs/images/sanitized-alpha-performance-cards.svg" width="920" alt="Sanitized alpha performance cards" />
+</p>
+
+| Case | Public-safe signal | Distilled lesson |
+| --- | --- | --- |
+| Case A | One historical batch reached 10 ACTIVE outcomes | Successful repairs reduced crowded trunks and added structurally different overlays |
+| Case B | 175 trajectories produced 45 near-correlation repair parents and 160 repair candidates | Strong parents near a correlation boundary should isolate settings effects before a full rewrite |
+| Case C | 6787 records became 1791 memory rows and 131 rules | Submission experience should become field-level policy, not chat memory |
+| Case D | Forum-derived recheck found 6 active and 6 pending from 12 checked | Forum evidence can help only after recheck, correlation review, and human selection |
+
+See [Sanitized Case Studies](docs/CASE_STUDIES.md) and the machine-readable [sanitized metrics](examples/sanitized_case_metrics.json).
+
+## Quick Start / 快速开始
 
 Install locally:
 
@@ -73,6 +91,22 @@ Check the environment:
 python -m wq_skill_pipeline doctor
 ```
 
+Run only template extraction from local JSONL:
+
+```bash
+python -m wq_skill_pipeline templates fetch \
+  --input-posts examples/community_posts.synthetic.jsonl \
+  --output-dir .tmp/templates
+```
+
+Run only near-pass repair suggestions from local ledger or check artifacts:
+
+```bash
+python -m wq_skill_pipeline repair suggest \
+  --ledger-root <local-harness-reports> \
+  --output-dir .tmp/repair
+```
+
 For live readonly Community fetch, install the optional browser dependency and save a local Playwright login state:
 
 ```bash
@@ -82,32 +116,7 @@ python -m wq_skill_pipeline login
 python -m wq_skill_pipeline run
 ```
 
-The live connector is readonly. It does not include submit capability, and it does not write cookies, authorization headers, passwords, or account secrets into run artifacts.
-
-Run only template extraction from local JSONL:
-
-```bash
-python -m wq_skill_pipeline templates fetch \
-  --input-posts examples/community_posts.synthetic.jsonl \
-  --output-dir .tmp/templates
-```
-
-Run only near-pass repair suggestions from local ledger/check artifacts:
-
-```bash
-python -m wq_skill_pipeline repair suggest \
-  --ledger-root path/to/local/worldquant-harness/reports \
-  --output-dir .tmp/repair
-```
-
-Public export is fail-closed: if the scanner sees likely credentials, raw platform payloads, long forum quotes, or executable alpha-expression patterns, public artifacts are not written.
-
-Skills are used as:
-
-- **gates**: block or penalize unsafe candidates;
-- **repair routes**: choose the right next action after a failure;
-- **risk flags**: carry template, correlation, turnover, coverage, unit, and stale-check risks into the harness;
-- **policy constraints**: prefer fresh checks, low-correlation evidence, transformed field/operator families, and human submit boundaries.
+The live connector is readonly. It has no submit capability and does not write cookies, authorization headers, passwords, or account secrets into run artifacts.
 
 ## Skill Map / Skill 总览
 
@@ -115,24 +124,24 @@ Skills are used as:
 
 | Skill | Role | Public-safe summary |
 | --- | --- | --- |
-| `community::near_pass_repair` | Near-pass repair route | Preserve the thesis first; choose metric overlay, settings grid, or family shift before spending fresh generation budget. |
-| `community::alpha_template_transform` | Template transformation route | Treat forum templates as grammar only; require field-family or operator-family transformation plus orthogonal overlay. |
-| `community::operation_attribution` | Failure attribution route | Diagnose turnover, unit, platform-limit, and availability failures before mutating expressions. |
+| `community::near_pass_repair` | Near-pass repair route | Preserve the thesis first; choose metric overlay, settings isolation, or family shift before spending fresh generation budget. |
+| `community::alpha_template_transform` | Template transformation route | Treat forum templates as grammar only; require field-family or operator-family transformation plus an orthogonal overlay. |
+| `community::operation_attribution` | Failure attribution route | Diagnose turnover, unit, platform-limit, and availability failures before mutating candidates. |
 | `community::submission_gate` | Submission safety route | Block stale checks, direct templates, unsupported operators, duplicates, and crowded families before submit review. |
 
 ### Selected Failure-Action Skills / 精选 failure-action skills
 
-| Skill | Use When | First Action |
+| Skill | Use when | First action |
 | --- | --- | --- |
 | `community_failure::metric_near_pass_overlay_repair` | Metrics are close to threshold without correlation risk | Preserve thesis, reduce crowded trunk, add broad overlay, recheck. |
-| `community_failure::correlation_near_pass_or_highscore_repair` | High-score or near-pass candidate fails self/prod correlation | Try settings grid, then field/operator-family shift. |
-| `community_failure::correlation_similarity_block_or_family_shift` | Non-near-pass similarity or crowded family failure | Block current signature; require new source/field/operator family. |
-| `community_failure::template_clone_blocker` | Candidate resembles public template or direct snippet | Block unchanged template; require transformation and overlay. |
+| `community_failure::correlation_near_pass_or_highscore_repair` | High-score or near-pass candidate fails self or production correlation | Try settings isolation, then field-family or operator-family shift. |
+| `community_failure::correlation_similarity_block_or_family_shift` | Similarity failure is structural | Block current signature and require a new source, field, or operator family. |
+| `community_failure::template_clone_blocker` | Candidate resembles a public template or direct snippet | Block unchanged template; require transformation and overlay. |
 | `community_failure::low_coverage_concentration_repair` | Sparse field family or low coverage dominates | Use tiny probes; add broad high-coverage leg. |
-| `community_failure::turnover_density_repair` | Turnover or trade_when density is unstable | Tune smoothing, participation, and breadth together. |
-| `community_failure::pending_check_not_submit_ready` | Correlation/precheck result is pending or stale | Keep in check queue only; refresh before submit review. |
-| `community_failure::operator_platform_unit_probe` | Unit, operator, or platform support is uncertain | Run tiny legal-input probes; normalize with rank/scale/ratio. |
-| `community_failure::ledger_duplicate_block` | Candidate is already submitted or exact duplicate | Block exact alpha; keep as ledger evidence only. |
+| `community_failure::turnover_density_repair` | Turnover or trade density is unstable | Tune smoothing, participation, and breadth together. |
+| `community_failure::pending_check_not_submit_ready` | Correlation or precheck result is pending or stale | Keep in check queue only; refresh before submit review. |
+| `community_failure::operator_platform_unit_probe` | Unit, operator, or platform support is uncertain | Run tiny legal-input probes; normalize with rank, scale, or ratios. |
+| `community_failure::ledger_duplicate_block` | Candidate is already submitted or exact duplicate | Block exact alpha; keep it as ledger evidence only. |
 
 For detailed bilingual notes, see [Community Skill Catalog](docs/COMMUNITY_SKILL_CATALOG.md).
 
@@ -140,25 +149,42 @@ For detailed bilingual notes, see [Community Skill Catalog](docs/COMMUNITY_SKILL
 
 ```mermaid
 flowchart LR
-  A["Forum / community triage<br/>论坛经验筛选"] --> B["Normalized risk records<br/>结构化风险记录"]
-  B --> C["Community skill memory<br/>skill_memory.jsonl"]
-  C --> D["Submission policy<br/>block / penalize / allow"]
-  D --> E["Candidate screening<br/>候选筛选"]
-  E --> F["Presubmit gates<br/>预提交门控"]
-  F --> G["Repair queue / check queue<br/>修复队列 / 检查队列"]
-  G --> H["Human submit boundary<br/>人工提交边界"]
+  A["Forum and local evidence<br/>论坛与本地证据"] --> B["Triage<br/>risk flags and families"]
+  B --> C["Skill memory<br/>routes and stop conditions"]
+  C --> D["Submission policy<br/>block, penalize, allow"]
+  D --> E["Candidate screening<br/>annotated decisions"]
+  E --> F["Presubmit gates<br/>fresh checks and similarity"]
+  F --> G["Repair queue or check queue<br/>next action"]
+  G --> H["Human submit boundary<br/>explicit selection only"]
 ```
 
 More detail: [Forum-to-Skill Workflow](docs/FORUM_TO_SKILL_WORKFLOW.md).
 
-## Synthetic Examples / 脱敏伪例
+## Privacy Boundary / 隐私边界
 
-This repository includes synthetic examples only:
+<p align="center">
+  <img src="docs/images/privacy-boundary.svg" width="920" alt="Public and private artifact boundary" />
+</p>
 
-- [community_skill_memory.synthetic.jsonl](examples/community_skill_memory.synthetic.jsonl)
-- [submission_policy.synthetic.json](examples/submission_policy.synthetic.json)
+Public export is fail-closed: if the scanner sees likely credentials, raw platform payloads, long forum quotes, or executable alpha-expression patterns, public artifacts are not written.
 
-These examples are intentionally non-executable. They use synthetic field families, synthetic source IDs, expression hashes, and risk flags. They do **not** include real alpha formulas or forum exports.
+This repository includes:
+
+- bilingual conceptual documentation;
+- synthetic community examples;
+- redacted skill memory shape;
+- synthetic submission policy shape;
+- sanitized case metrics and public-safe visuals.
+
+This repository does not include:
+
+- real alpha expressions;
+- raw forum text dumps;
+- account IDs, cookies, credentials, or session state;
+- private platform screenshots or code panels;
+- claims of guaranteed return or investment performance.
+
+See [Privacy and Safety](docs/PRIVACY_AND_SAFETY.md) and [Disclaimer](DISCLAIMER.md).
 
 ## Relationship To `worldquant-harness`
 
@@ -169,18 +195,7 @@ This showcase explains the public-safe idea behind the community skill layer use
 - `wq_forum_submission_optimizer.py`: converts skill memory into conservative submission policy.
 - `wq_workflow_presubmit.py`: applies gates before submit review.
 
-This repo is documentation-first. It does not copy private artifacts from the original research environment.
-
-## Privacy And Safety / 隐私与安全
-
-- No real alpha expressions.
-- No raw forum text dumps.
-- No account IDs, cookies, credentials, screenshots, or private exports.
-- No claim of investment performance.
-- No guarantee that any synthetic route produces a valid or profitable alpha.
-- Not affiliated with WorldQuant or WorldQuant BRAIN.
-
-See [Privacy and Safety](docs/PRIVACY_AND_SAFETY.md) and [Disclaimer](DISCLAIMER.md).
+This repo is documentation-first, but it also ships a runnable synthetic CLI so the artifact shapes can be inspected without credentials.
 
 ## License
 

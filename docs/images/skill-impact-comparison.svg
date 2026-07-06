@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="640" viewBox="0 0 1120 640" role="img" aria-labelledby="title desc">
+<title id="title">Skill memory impact comparison</title>
+<desc id="desc">Comparison of unstructured forum reuse and skill-routed agent research behavior.</desc>
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#5c6670"/>
+  </marker>
+  <style>
+    text { font-family: Inter, Segoe UI, Arial, sans-serif; fill: #17202a; letter-spacing: 0; }
+    .title { font-size: 28px; font-weight: 700; }
+    .subtitle { font-size: 15px; fill: #5c6670; }
+    .label { font-size: 15px; font-weight: 700; }
+    .body { font-size: 13px; fill: #5c6670; }
+    .tiny { font-size: 12px; fill: #5c6670; }
+    .metric { font-size: 20px; font-weight: 700; }
+  </style>
+</defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="48" y="54" class="title">Why skill memory matters</text>
+<text x="48" y="82" class="subtitle">The value is routing: decide whether to block, repair, refresh, or change family before spending submit budget.</text>
+
+<rect x="68" y="130" width="444" height="362" rx="8" fill="#f7f9fb" stroke="#d8dde3" stroke-width="2"/>
+<text x="92" y="164" class="label">Without structured skills</text>
+<text x="92" y="194" class="body">Forum snippets and failed runs stay as loose notes.</text>
+<rect x="104" y="232" width="170" height="76" rx="8" fill="#fdecec" stroke="#d64545"/>
+<text x="122" y="260" class="body">Template risk</text>
+<text x="122" y="286" class="metric">clone loop</text>
+<rect x="310" y="232" width="170" height="76" rx="8" fill="#fff4df" stroke="#c47f17"/>
+<text x="328" y="260" class="body">Near pass</text>
+<text x="328" y="286" class="metric">random retune</text>
+<rect x="104" y="344" width="170" height="76" rx="8" fill="#fff4df" stroke="#c47f17"/>
+<text x="122" y="372" class="body">Pending check</text>
+<text x="122" y="398" class="metric">submit risk</text>
+<rect x="310" y="344" width="170" height="76" rx="8" fill="#fdecec" stroke="#d64545"/>
+<text x="328" y="372" class="body">Failure cause</text>
+<text x="328" y="398" class="metric">unclear</text>
+
+<rect x="608" y="130" width="444" height="362" rx="8" fill="#eaf1ff" stroke="#2f6fed" stroke-width="2"/>
+<text x="632" y="164" class="label">With community skill memory</text>
+<text x="632" y="194" class="body">Each risk flag maps to an allowed next action.</text>
+<rect x="644" y="232" width="170" height="76" rx="8" fill="#e8f6ee" stroke="#1f9d55"/>
+<text x="662" y="260" class="body">Template risk</text>
+<text x="662" y="286" class="metric">transform</text>
+<rect x="850" y="232" width="170" height="76" rx="8" fill="#e8f6ee" stroke="#1f9d55"/>
+<text x="868" y="260" class="body">Near pass</text>
+<text x="868" y="286" class="metric">repair route</text>
+<rect x="644" y="344" width="170" height="76" rx="8" fill="#e8f6ee" stroke="#1f9d55"/>
+<text x="662" y="372" class="body">Pending check</text>
+<text x="662" y="398" class="metric">check queue</text>
+<rect x="850" y="344" width="170" height="76" rx="8" fill="#e8f6ee" stroke="#1f9d55"/>
+<text x="868" y="372" class="body">Failure cause</text>
+<text x="868" y="398" class="metric">typed action</text>
+
+<line x1="512" y1="311" x2="608" y2="311" stroke="#5c6670" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="534" y="290" class="tiny">distill</text>
+<text x="534" y="334" class="tiny">route</text>
+
+<rect x="126" y="534" width="246" height="58" rx="8" fill="#f7f9fb" stroke="#d8dde3"/>
+<text x="144" y="558" class="body">Primary risk</text>
+<text x="144" y="580" class="label">repeating unsafe patterns</text>
+
+<rect x="438" y="534" width="246" height="58" rx="8" fill="#f7f9fb" stroke="#d8dde3"/>
+<text x="456" y="558" class="body">Skill system change</text>
+<text x="456" y="580" class="label">classify before mutating</text>
+
+<rect x="750" y="534" width="246" height="58" rx="8" fill="#f7f9fb" stroke="#d8dde3"/>
+<text x="768" y="558" class="body">Agent result</text>
+<text x="768" y="580" class="label">safer, inspectable actions</text>
+
+<text x="48" y="622" class="tiny">What this proves: the project is useful because it turns forum memory into operational controls.</text>
+</svg>

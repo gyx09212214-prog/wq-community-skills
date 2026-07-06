@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="620" viewBox="0 0 1120 620" role="img" aria-labelledby="title desc">
+<title id="title">Public and private artifact boundary</title>
+<desc id="desc">Privacy boundary for public WQ Community Skills documentation and private research artifacts.</desc>
+<style>
+  text { font-family: Inter, Segoe UI, Arial, sans-serif; fill: #17202a; letter-spacing: 0; }
+  .title { font-size: 28px; font-weight: 700; }
+  .subtitle { font-size: 15px; fill: #5c6670; }
+  .label { font-size: 15px; font-weight: 700; }
+  .body { font-size: 13px; fill: #5c6670; }
+  .tiny { font-size: 12px; fill: #5c6670; }
+  .metric { font-size: 20px; font-weight: 700; }
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="48" y="54" class="title">Privacy boundary: show the mechanism, not private alpha material</text>
+<text x="48" y="82" class="subtitle">The repository is designed to be public and conservative by default.</text>
+
+<rect x="72" y="134" width="442" height="360" rx="8" fill="#e8f6ee" stroke="#1f9d55" stroke-width="2"/>
+<text x="100" y="170" class="label">Public-safe artifacts</text>
+<text x="100" y="206" class="body">Synthetic community examples</text>
+<text x="100" y="238" class="body">Redacted template skeletons</text>
+<text x="100" y="270" class="body">Skill route names and stop conditions</text>
+<text x="100" y="302" class="body">Submission policy shape</text>
+<text x="100" y="334" class="body">Sanitized metric cards with Case labels</text>
+<text x="100" y="366" class="body">Privacy scan result and file hashes</text>
+<rect x="118" y="412" width="268" height="50" rx="8" fill="#ffffff" stroke="#1f9d55"/>
+<text x="136" y="444" class="metric" fill="#1f9d55">safe for README</text>
+
+<rect x="606" y="134" width="442" height="360" rx="8" fill="#fdecec" stroke="#d64545" stroke-width="2"/>
+<text x="634" y="170" class="label">Private or blocked artifacts</text>
+<text x="634" y="206" class="body">Real alpha expressions</text>
+<text x="634" y="238" class="body">Raw forum exports and long quotes</text>
+<text x="634" y="270" class="body">Cookies, headers, tokens, account data</text>
+<text x="634" y="302" class="body">Platform code panels or private screenshots</text>
+<text x="634" y="334" class="body">Raw check and submit payloads</text>
+<text x="634" y="366" class="body">Claims of guaranteed investment returns</text>
+<rect x="652" y="412" width="268" height="50" rx="8" fill="#ffffff" stroke="#d64545"/>
+<text x="670" y="444" class="metric" fill="#d64545">fail closed</text>
+
+<rect x="258" y="532" width="604" height="42" rx="8" fill="#f7f9fb" stroke="#d8dde3"/>
+<text x="280" y="558" class="body">Public export scans artifacts before copy. If private patterns appear, the export is not written.</text>
+
+<text x="48" y="600" class="tiny">What this proves: the project can market its ideas without publishing private formulas or platform material.</text>
+</svg>

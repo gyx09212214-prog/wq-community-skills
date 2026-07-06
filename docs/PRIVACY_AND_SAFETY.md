@@ -11,6 +11,8 @@ This repository is intentionally conservative. It is designed for public explana
 - Synthetic submission policy shape.
 - Public-safe skill IDs and route names.
 - High-level explanation of gate, repair, and policy behavior.
+- Sanitized effect metrics using case labels instead of alpha IDs.
+- Public-safe SVG diagrams and metric cards.
 
 ## What Is Not Included / 不包含内容
 
@@ -21,6 +23,7 @@ This repository is intentionally conservative. It is designed for public explana
 - Cookies, tokens, credentials, or session state.
 - Private WQ BRAIN exports.
 - Screenshots of private platform panels.
+- Screenshots that show code panels, expressions, account context, or platform-only identifiers.
 - Claims of guaranteed return or investment performance.
 
 ## Synthetic Example Policy / 伪例策略
@@ -32,8 +35,25 @@ Synthetic examples use:
 - expression hashes instead of expressions;
 - high-level risk flags such as `template_clone_risk`;
 - non-executable placeholders.
+- case labels such as `Case A1` for public metric cards.
 
 They are meant to show **structure**, not executable research content.
+
+## Visual Policy / 图片策略
+
+Allowed public visuals:
+
+- skill-memory flow diagrams;
+- sanitized performance cards with case labels;
+- privacy-boundary diagrams;
+- synthetic review report screenshots that do not contain real expressions.
+
+Blocked public visuals:
+
+- raw platform screenshots;
+- screenshots with code panels or alpha expressions;
+- account pages, browser sessions, cookies, or private identifiers;
+- raw forum captures or long verbatim forum quotes.
 
 ## Responsible Framing / 负责任表述
 
