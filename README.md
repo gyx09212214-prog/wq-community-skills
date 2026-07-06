@@ -2,11 +2,9 @@
 
 **Forum experience -> privacy-safe skill memory -> safer WQ-style agent research**
 
-**双语项目 / Bilingual project**
+[中文说明](README.zh-CN.md)
 
-This repository is a public showcase of a **forum-to-agent-skill memory** pipeline for WorldQuant-style alpha research agents. It does not publish formulas. It shows how community experience, failed submissions, near-pass repairs, and template risks can become reusable gates, repair routes, risk flags, and policy constraints.
-
-这个仓库展示的是一套“论坛经验 -> Agent skill memory”的脱敏流程。它不是公式库，也不是平台截图合集；它的作用是把论坛经验、失败记录和微调复盘转成 Agent 能执行的门控、修复路线、风险标签和提交策略。
+This repository is a public showcase of a **forum-to-agent-skill memory** pipeline for WorldQuant-style alpha research agents. It does not publish formulas or private platform screenshots. It shows how community experience, failed submissions, near-pass repairs, and template risks can become reusable gates, repair routes, risk flags, and policy constraints.
 
 > Educational and research use only. This repository is not affiliated with, endorsed by, or sponsored by WorldQuant or WorldQuant BRAIN. It does not contain real alpha expressions, raw forum exports, credentials, private platform screenshots, or investment advice.
 
@@ -14,11 +12,9 @@ This repository is a public showcase of a **forum-to-agent-skill memory** pipeli
   <img src="docs/images/hero-skill-memory-flow.svg" width="920" alt="Forum evidence to agent skill memory flow" />
 </p>
 
-## Why This Exists / 为什么需要它
+## Why This Exists
 
-Forum discussions can contain useful operational knowledge, but direct reuse is dangerous. Snippets may be template clones, near-pass candidates may need repair instead of random regeneration, pending checks are not submit-ready, and different failures require different next actions.
-
-论坛经验有价值，但不能直接拿来提交。真正值得沉淀的是：什么时候该 block，什么时候该 repair，什么时候 refresh check，什么时候必须换字段族或算子族，什么时候必须停在人审边界前。
+Forum discussions can contain useful operational knowledge, but direct reuse is dangerous. Snippets may become template clones, near-pass candidates may need repair instead of random regeneration, pending checks are not submit-ready, and different failures require different next actions.
 
 | Problem | Skill-memory response |
 | --- | --- |
@@ -32,7 +28,7 @@ Forum discussions can contain useful operational knowledge, but direct reuse is 
   <img src="docs/images/skill-impact-comparison.svg" width="920" alt="Skill memory impact comparison" />
 </p>
 
-## What It Does / 它具体做什么
+## What It Does
 
 The pipeline turns community and local evidence into public-safe artifacts:
 
@@ -42,9 +38,9 @@ The pipeline turns community and local evidence into public-safe artifacts:
 4. **Suggest repairs** for near-pass and known failure patterns.
 5. **Export public artifacts** only after privacy scanning.
 
-这条链路的目标不是生成 alpha，而是给 Agent 一个更可靠的行动系统：把经验变成 route、gate、repair 和 policy。
+The goal is not to generate alphas directly. The goal is to give an agent a more reliable action system: experience becomes route, gate, repair, and policy.
 
-## Public-Safe Effect Signals / 脱敏效果信号
+## Public-Safe Effect Signals
 
 The repository includes sanitized effect signals to explain why the skill system matters. These are workflow evidence cards, not trading advice and not performance guarantees.
 
@@ -61,7 +57,7 @@ The repository includes sanitized effect signals to explain why the skill system
 
 See [Sanitized Case Studies](docs/CASE_STUDIES.md) and the machine-readable [sanitized metrics](examples/sanitized_case_metrics.json).
 
-## Quick Start / 快速开始
+## Quick Start
 
 Install locally:
 
@@ -118,9 +114,9 @@ python -m wq_skill_pipeline run
 
 The live connector is readonly. It has no submit capability and does not write cookies, authorization headers, passwords, or account secrets into run artifacts.
 
-## Skill Map / Skill 总览
+## Skill Map
 
-### Main Routes / 主 route
+### Main Routes
 
 | Skill | Role | Public-safe summary |
 | --- | --- | --- |
@@ -129,7 +125,7 @@ The live connector is readonly. It has no submit capability and does not write c
 | `community::operation_attribution` | Failure attribution route | Diagnose turnover, unit, platform-limit, and availability failures before mutating candidates. |
 | `community::submission_gate` | Submission safety route | Block stale checks, direct templates, unsupported operators, duplicates, and crowded families before submit review. |
 
-### Selected Failure-Action Skills / 精选 failure-action skills
+### Selected Failure-Action Skills
 
 | Skill | Use when | First action |
 | --- | --- | --- |
@@ -143,13 +139,13 @@ The live connector is readonly. It has no submit capability and does not write c
 | `community_failure::operator_platform_unit_probe` | Unit, operator, or platform support is uncertain | Run tiny legal-input probes; normalize with rank, scale, or ratios. |
 | `community_failure::ledger_duplicate_block` | Candidate is already submitted or exact duplicate | Block exact alpha; keep it as ledger evidence only. |
 
-For detailed bilingual notes, see [Community Skill Catalog](docs/COMMUNITY_SKILL_CATALOG.md).
+For detailed notes, see [Community Skill Catalog](docs/COMMUNITY_SKILL_CATALOG.md).
 
-## Workflow / 工作流
+## Workflow
 
 ```mermaid
 flowchart LR
-  A["Forum and local evidence<br/>论坛与本地证据"] --> B["Triage<br/>risk flags and families"]
+  A["Forum and local evidence"] --> B["Triage<br/>risk flags and families"]
   B --> C["Skill memory<br/>routes and stop conditions"]
   C --> D["Submission policy<br/>block, penalize, allow"]
   D --> E["Candidate screening<br/>annotated decisions"]
@@ -160,7 +156,7 @@ flowchart LR
 
 More detail: [Forum-to-Skill Workflow](docs/FORUM_TO_SKILL_WORKFLOW.md).
 
-## Privacy Boundary / 隐私边界
+## Privacy Boundary
 
 <p align="center">
   <img src="docs/images/privacy-boundary.svg" width="920" alt="Public and private artifact boundary" />
