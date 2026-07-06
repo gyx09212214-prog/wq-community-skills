@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="660" viewBox="0 0 1120 660" role="img" aria-labelledby="title desc">
+<title id="title">Sanitized alpha performance cards</title>
+<desc id="desc">Public-safe metric cards for selected cases without alpha expressions or platform screenshots.</desc>
+<style>
+  text { font-family: Inter, Segoe UI, Arial, sans-serif; fill: #17202a; letter-spacing: 0; }
+  .title { font-size: 28px; font-weight: 700; }
+  .subtitle { font-size: 15px; fill: #5c6670; }
+  .label { font-size: 15px; font-weight: 700; }
+  .body { font-size: 13px; fill: #5c6670; }
+  .tiny { font-size: 12px; fill: #5c6670; }
+  .metric { font-size: 24px; font-weight: 700; }
+  .smallmetric { font-size: 18px; font-weight: 700; }
+</style>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="48" y="54" class="title">Sanitized effect signals from the skill workflow</text>
+<text x="48" y="82" class="subtitle">Only summary metrics are shown. Alpha expressions, platform screenshots, and raw forum text are withheld.</text>
+
+<rect x="62" y="126" width="306" height="194" rx="8" fill="#eaf1ff" stroke="#2f6fed" stroke-width="2"/>
+<text x="86" y="160" class="label">Case A1</text>
+<text x="86" y="184" class="body">analyst, credit, microstructure</text>
+<text x="86" y="222" class="metric" fill="#1f9d55">Sharpe 1.53</text>
+<text x="86" y="252" class="smallmetric">Fitness 1.29</text>
+<text x="86" y="280" class="body">Returns 8.91% · Turnover 0.1111</text>
+<text x="86" y="302" class="tiny">SC note: 0.6666</text>
+
+<rect x="408" y="126" width="306" height="194" rx="8" fill="#e8f6ee" stroke="#1f9d55" stroke-width="2"/>
+<text x="432" y="160" class="label">Case A2</text>
+<text x="432" y="184" class="body">cashflow value, vwap reversal</text>
+<text x="432" y="222" class="metric" fill="#1f9d55">Sharpe 2.35</text>
+<text x="432" y="252" class="smallmetric">Fitness 1.78</text>
+<text x="432" y="280" class="body">Returns 11.23% · Turnover 0.1967</text>
+<text x="432" y="302" class="tiny">SC note: platform ACTIVE</text>
+
+<rect x="754" y="126" width="306" height="194" rx="8" fill="#eaf1ff" stroke="#2f6fed" stroke-width="2"/>
+<text x="778" y="160" class="label">Case A3</text>
+<text x="778" y="184" class="body">cashflow, options overlay</text>
+<text x="778" y="222" class="metric" fill="#1f9d55">Sharpe 1.69</text>
+<text x="778" y="252" class="smallmetric">Fitness 1.21</text>
+<text x="778" y="280" class="body">Returns 9.94% · Turnover 0.1924</text>
+<text x="778" y="302" class="tiny">SC note: 0.6899</text>
+
+<rect x="62" y="380" width="306" height="150" rx="8" fill="#fff4df" stroke="#c47f17" stroke-width="2"/>
+<text x="86" y="414" class="label">Case B: near-correlation repair</text>
+<text x="86" y="444" class="metric" fill="#c47f17">160 repair candidates</text>
+<text x="86" y="474" class="body">45 near self-corr repair parents</text>
+<text x="86" y="496" class="body">1 submit target and 6 check targets</text>
+
+<rect x="408" y="380" width="306" height="150" rx="8" fill="#f7f9fb" stroke="#d8dde3" stroke-width="2"/>
+<text x="432" y="414" class="label">Case C: rule memory</text>
+<text x="432" y="444" class="metric" fill="#2f6fed">131 rules</text>
+<text x="432" y="474" class="body">6787 records to 1791 memory rows</text>
+<text x="432" y="496" class="body">failures become field-level policy</text>
+
+<rect x="754" y="380" width="306" height="150" rx="8" fill="#e8f6ee" stroke="#1f9d55" stroke-width="2"/>
+<text x="778" y="414" class="label">Case D: forum recheck</text>
+<text x="778" y="444" class="metric" fill="#1f9d55">6 active of 12 checked</text>
+<text x="778" y="474" class="body">6 pending stayed out of submit review</text>
+<text x="778" y="496" class="body">0 self or prod correlation fails</text>
+
+<text x="48" y="610" class="tiny">These are workflow evidence cards. They do not publish alpha code, raw platform exports, private screenshots, or investment advice.</text>
+<text x="48" y="632" class="tiny">What this proves: the skill layer can be evaluated by routing outcomes, repair queues, and public-safe summary metrics.</text>
+</svg>

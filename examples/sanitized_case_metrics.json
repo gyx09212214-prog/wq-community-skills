@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "privacy_boundary": {
+    "no_real_alpha_expressions": true,
+    "no_platform_screenshots": true,
+    "no_raw_forum_exports": true,
+    "case_labels_replace_alpha_ids": true
+  },
+  "effect_signals": [
+    {
+      "case_id": "submit10_active_batch",
+      "public_label": "Case A",
+      "summary": {
+        "active_count": 10,
+        "main_lesson": "Successful repairs reduced crowded trunks and added cross-domain overlays. Simple window tuning was not the main driver."
+      },
+      "sanitized_examples": [
+        {
+          "label": "Case A1",
+          "domain": "analyst, credit, microstructure",
+          "sharpe": 1.53,
+          "fitness": 1.29,
+          "returns_pct": 8.91,
+          "turnover": 0.1111,
+          "self_corr_note": "0.6666"
+        },
+        {
+          "label": "Case A2",
+          "domain": "cashflow value, vwap reversal",
+          "sharpe": 2.35,
+          "fitness": 1.78,
+          "returns_pct": 11.23,
+          "turnover": 0.1967,
+          "self_corr_note": "platform ACTIVE"
+        },
+        {
+          "label": "Case A3",
+          "domain": "cashflow, options overlay",
+          "sharpe": 1.69,
+          "fitness": 1.21,
+          "returns_pct": 9.94,
+          "turnover": 0.1924,
+          "self_corr_note": "0.6899"
+        }
+      ]
+    },
+    {
+      "case_id": "near_sc_cutoff_settings_repair",
+      "public_label": "Case B",
+      "summary": {
+        "trajectories": 175,
+        "wq_high_score_hits": 136,
+        "platform_metric_eligible": 115,
+        "check_readable": 3,
+        "active_or_submitted": 1,
+        "self_corr_failures": 85,
+        "near_self_corr_repair_parents": 45,
+        "repair_candidates": 160,
+        "submit_targets": 1,
+        "check_targets": 6
+      },
+      "sanitized_examples": [
+        {
+          "label": "Case B1",
+          "lifecycle": "ACTIVE",
+          "wq_score": 1.42,
+          "sharpe": 2.82,
+          "fitness": 1.42,
+          "turnover": 0.447,
+          "self_corr_note": "near cutoff"
+        },
+        {
+          "label": "Case B2",
+          "lifecycle": "precheck pass, submit target",
+          "wq_score": 1.21,
+          "sharpe": 2.66,
+          "fitness": 1.21,
+          "turnover": 0.6625,
+          "self_corr_note": "near cutoff"
+        }
+      ]
+    },
+    {
+      "case_id": "submission_experience_rules",
+      "public_label": "Case C",
+      "summary": {
+        "records": 6787,
+        "memory_rows": 1791,
+        "rules": 131,
+        "artifacts_scanned": 1615,
+        "success_outcomes": 36,
+        "fail_outcomes": 2924,
+        "pre_submit_pass_outcomes": 2996
+      }
+    },
+    {
+      "case_id": "forum_derived_recheck",
+      "public_label": "Case D",
+      "summary": {
+        "checked": 12,
+        "active": 6,
+        "pending": 6,
+        "self_correlation_fail": 0,
+        "prod_correlation_fail": 0
+      }
+    }
+  ]
+}
